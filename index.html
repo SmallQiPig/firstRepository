@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>风机故障诊断</title>
+    <link rel="stylesheet" href="assets/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <strong>风机故障诊断</strong>
+          <span>第 1 轮框架 · 示范案例 · 无大模型依赖</span>
+        </div>
+        <nav class="top-nav">
+          <a id="nav-search" href="#/">搜索</a>
+          <a id="nav-browse" href="#/c/pitch">按部件浏览</a>
+        </nav>
+      </header>
+
+      <aside class="sidebar">
+        <h2>部件目录</h2>
+        <ul class="comp-list" id="comp-list"></ul>
+      </aside>
+
+      <main class="main">
+        <section id="view-search">
+          <form class="search-card" id="search-form">
+            <div class="search-row">
+              <input
+                id="query-input"
+                type="search"
+                placeholder="口语或故障码，例如：偏航异响，报过偏航过载 / 变桨 1 轴跟不上 / F2101"
+                autocomplete="off"
+              />
+              <button type="submit">检索</button>
+            </div>
+            <p class="hint">不强制格式。可点部件芯片收窄范围。结果最多 3 条，并给出命中原因与文档引用位。</p>
+            <div class="chips" id="chips"></div>
+          </form>
+          <div class="results" id="results"></div>
+        </section>
+
+        <section id="view-browse" hidden>
+          <div class="browse-head">
+            <div>
+              <h2 id="browse-title" style="margin:0">部件</h2>
+              <p class="hint" id="browse-sub"></p>
+            </div>
+            <a class="btn ghost" href="#/" style="text-decoration:none;display:inline-flex;align-items:center">返回搜索</a>
+          </div>
+          <div id="browse-list"></div>
+        </section>
+
+        <section id="view-detail" hidden>
+          <article class="panel detail" id="detail-root"></article>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "blade",
+    "name": "叶片/叶轮",
+    "aliases": ["叶片", "叶轮", "桨叶", "风轮"]
+  },
+  {
+    "id": "pitch",
+    "name": "变桨",
+    "aliases": ["变桨系统", "桨距", "pitch"]
+  },
+  {
+    "id": "mainshaft",
+    "name": "主轴/主轴承",
+    "aliases": ["主轴", "主轴承", "低速轴"]
+  },
+  {
+    "id": "gearbox",
+    "name": "齿轮箱",
+    "aliases": ["增速箱", "齿轮箱油", "gearbox"]
+  },
+  {
+    "id": "generator",
+    "name": "发电机",
+    "aliases": ["发电", "绕组", "发电机轴承"]
+  },
+  {
+    "id": "converter",
+    "name": "变流器/电气",
+    "aliases": ["变流器", "变频器", "电气", "IGBT", "过流"]
+  },
+  {
+    "id": "yaw",
+    "name": "偏航",
+    "aliases": ["对风", "偏航系统", "偏航电机"]
+  },
+  {
+    "id": "hydraulic",
+    "name": "液压",
+    "aliases": ["液压站", "液压油", "油压"]
+  },
+  {
+    "id": "brake",
+    "name": "刹车",
+    "aliases": ["制动", "叶轮刹车", "高速轴刹车"]
+  },
+  {
+    "id": "cooling",
+    "name": "冷却/润滑",
+    "aliases": ["冷却", "润滑", "油冷", "水冷", "散热器"]
+  },
+  {
+    "id": "tower",
+    "name": "塔筒/基础",
+    "aliases": ["塔筒", "基础", "锚栓", "塔基"]
+  },
+  {
+    "id": "control",
+    "name": "控制/传感器/通信",
+    "aliases": ["传感器", "通信", "PLC", "控制器", "信号"]
+  },
+  {
+    "id": "transformer",
+    "name": "箱变/并网",
+    "aliases": ["箱变", "并网", "变压器", "开关柜"]
+  },
+  {
+    "id": "other",
+    "name": "其他",
+    "aliases": ["未分类", "整机", "停机"]
+  }
+]

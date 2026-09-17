@@ -1,0 +1,100 @@
+[
+  {
+    "id": "doc-blade-01",
+    "title": "叶片/叶轮 · 振动与不平衡排查",
+    "source": "手册占位（待导入）",
+    "section": "叶片 / 叶轮动平衡",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-pitch-01",
+    "title": "变桨系统 · 不同步 / 跟不上",
+    "source": "手册占位（待导入）",
+    "section": "变桨 / 同步异常",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-mainshaft-01",
+    "title": "主轴承 · 温度与异响",
+    "source": "手册占位（待导入）",
+    "section": "传动链 / 主轴承",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-gearbox-01",
+    "title": "齿轮箱 · 油温高 / 滤芯压差",
+    "source": "手册占位（待导入）",
+    "section": "齿轮箱 / 润滑冷却",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-generator-01",
+    "title": "发电机 · 绕组 / 轴承温度高",
+    "source": "手册占位（待导入）",
+    "section": "发电机 / 温升",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-converter-01",
+    "title": "变流器 · 电网故障 / 过流",
+    "source": "手册占位（待导入）",
+    "section": "变流器 / 电网与过流",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-yaw-01",
+    "title": "偏航系统 · 过载或异响",
+    "source": "手册占位（待导入）",
+    "section": "偏航 / 过载与机械异响",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-hydraulic-01",
+    "title": "液压系统 · 压力低或泄漏",
+    "source": "手册占位（待导入）",
+    "section": "液压 / 压力与泄漏",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-brake-01",
+    "title": "刹车系统 · 无法释放或磨损",
+    "source": "手册占位（待导入）",
+    "section": "制动 / 刹车释放",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-cooling-01",
+    "title": "冷却润滑 · 风扇或冷却器异常",
+    "source": "手册占位（待导入）",
+    "section": "冷却 / 润滑回路",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-tower-01",
+    "title": "塔筒基础 · 螺栓松动与振动",
+    "source": "手册占位（待导入）",
+    "section": "结构 / 塔基螺栓",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-control-01",
+    "title": "控制传感 · 信号丢失或漂移",
+    "source": "手册占位（待导入）",
+    "section": "控制 / 传感器与通信",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-transformer-01",
+    "title": "箱变并网 · 过温或并网失败",
+    "source": "手册占位（待导入）",
+    "section": "箱变 / 并网",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  },
+  {
+    "id": "doc-other-01",
+    "title": "其他 · 未分类异常停机",
+    "source": "手册占位（待导入）",
+    "section": "整机 / 未分类",
+    "excerpt": "第 3 轮将挂上手册或 Solution Center 片段。"
+  }
+]
