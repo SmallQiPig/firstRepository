@@ -166,11 +166,13 @@ function scoreCase(query, tokens, caseItem, terms, selectedComponentId) {
     }
   }
 
+  const queryMatched = reasons.length > 0;
   if (selectedComponentId) {
-    if (caseItem.componentId === selectedComponentId) {
+    const allowChipBoost = !query || queryMatched;
+    if (allowChipBoost && caseItem.componentId === selectedComponentId) {
       score += 50;
       reasons.push({ type: "component", text: "已选部件加权（主部件）" });
-    } else if ((caseItem.relatedComponentIds || []).includes(selectedComponentId)) {
+    } else if (query && queryMatched && (caseItem.relatedComponentIds || []).includes(selectedComponentId)) {
       score += 18;
       reasons.push({ type: "component", text: "已选部件加权（相关部件）" });
     }

@@ -50,6 +50,13 @@ assert(extractFaultCodes("报 F6105 和 f2101").includes("F6105"), "extract code
 const chip = diagnose("油温高", knowledge, { componentId: "gearbox" });
 assert(chip.hits[0].caseId === "gearbox-oil-temp", "component chip weights gearbox");
 
+const unknownWithChip = diagnose("F1234", knowledge, { componentId: "pitch" });
+assert(unknownWithChip.empty, "unknown code stays empty even with a chip");
+
+const chipOnly = diagnose("", knowledge, { componentId: "pitch" });
+assert(!chipOnly.empty, "chip-only still lists the component case");
+assert(chipOnly.hits[0].caseId === "pitch-desync", "chip-only ranks pitch case");
+
 if (process.exitCode) {
   console.error("match tests failed");
   process.exit(1);

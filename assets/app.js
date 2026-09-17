@@ -40,8 +40,8 @@ function parseHash() {
   } else {
     state.view = "search";
     state.caseId = null;
-    state.query = params.get("q") || state.query;
-    if (params.get("c")) state.componentId = params.get("c");
+    state.query = params.get("q") || "";
+    state.componentId = params.get("c") || null;
   }
 }
 
