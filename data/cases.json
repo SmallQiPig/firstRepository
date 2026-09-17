@@ -1,0 +1,296 @@
+[
+  {
+    "id": "blade-imbalance",
+    "componentId": "blade",
+    "relatedComponentIds": ["tower"],
+    "faultMode": "叶轮不平衡或叶片异常振动",
+    "symptoms": ["叶轮振动偏大", "塔筒伴随晃动", "特定转速区振动升高"],
+    "synonyms": ["叶片不平衡", "叶轮动平衡", "叶片振动", "桨叶开裂"],
+    "faultCodes": ["F1101"],
+    "causes": [
+      "叶片覆冰、积污或表面损伤导致质量不平衡",
+      "某支叶片维修后配重未复原",
+      "叶根螺栓预紧力下降引起附加振动"
+    ],
+    "steps": [
+      "核对振动趋势是否随风速/转速变化，排除传感器误报",
+      "目视叶片前缘、后缘及叶尖有无开裂、掉漆、雷击点",
+      "检查叶根螺栓力矩与标记是否错位",
+      "必要时安排动平衡或停机除冰后再复测"
+    ],
+    "documentRefs": ["doc-blade-01"]
+  },
+  {
+    "id": "pitch-desync",
+    "componentId": "pitch",
+    "relatedComponentIds": ["hydraulic", "control"],
+    "faultMode": "变桨不同步 / 跟不上",
+    "symptoms": ["各轴桨距角不一致", "一轴跟不上指令", "变桨超时或限功率"],
+    "synonyms": ["变桨不同步", "桨距跟不上", "变桨滞后", "1轴跟不上", "变桨1轴"],
+    "faultCodes": ["F2101"],
+    "causes": [
+      "单轴变桨驱动或编码器反馈异常",
+      "液压变桨供油压力不足或电磁阀卡滞（若为液压变桨）",
+      "桨距给定与反馈通信中断"
+    ],
+    "steps": [
+      "对比三轴桨距给定/反馈曲线，确认哪一轴偏差超限",
+      "检查该轴编码器接线、供电与故障码时间戳",
+      "测量变桨供电或液压压力是否在允许范围",
+      "在安全条件下做单轴点动，确认机械是否卡滞"
+    ],
+    "documentRefs": ["doc-pitch-01"]
+  },
+  {
+    "id": "mainshaft-bearing-temp",
+    "componentId": "mainshaft",
+    "relatedComponentIds": ["cooling", "gearbox"],
+    "faultMode": "主轴承温度高或异响",
+    "symptoms": ["主轴承温度持续偏高", "低速轴侧异响", "脂液位或泄漏报警"],
+    "synonyms": ["主轴承过温", "主轴异响", "主轴承润滑", "低速轴轴承"],
+    "faultCodes": ["F1202"],
+    "causes": [
+      "润滑脂加注不足、油脂老化或润滑管路堵塞",
+      "轴承游隙或损伤发展",
+      "主轴对中变化导致额外载荷"
+    ],
+    "steps": [
+      "对比主轴承温度与舱内环境、发电机轴承温度",
+      "检查自动润滑泵运行、油脂管路与分配器",
+      "听音/振动确认是否为轴承特征频率",
+      "排查漏脂、密封失效后再决定是否停机检查轴承"
+    ],
+    "documentRefs": ["doc-mainshaft-01"]
+  },
+  {
+    "id": "gearbox-oil-temp",
+    "componentId": "gearbox",
+    "relatedComponentIds": ["cooling"],
+    "faultMode": "齿轮箱油温高或滤芯压差大",
+    "symptoms": ["齿轮箱油温高报警", "滤芯压差增大", "功率受限"],
+    "synonyms": ["齿轮箱过温", "油温高", "滤芯压差", "润滑油脏"],
+    "faultCodes": ["F3302"],
+    "causes": [
+      "油冷器脏堵或冷却风扇未启动",
+      "滤芯饱和、旁通或油品变质",
+      "齿轮箱内部磨损导致油温与压差同时上升"
+    ],
+    "steps": [
+      "读取油温、油压、滤芯压差及风扇启停记录",
+      "检查冷却器翅片、风扇电源与温控设定",
+      "核对油位、油品外观，必要时取样",
+      "压差持续高则按规程更换滤芯并观察复归"
+    ],
+    "documentRefs": ["doc-gearbox-01"]
+  },
+  {
+    "id": "generator-winding-temp",
+    "componentId": "generator",
+    "relatedComponentIds": ["cooling", "converter"],
+    "faultMode": "绕组温度高 / 轴承温度高",
+    "symptoms": ["绕组温度高", "发电机轴承温度高", "过温降额或停机"],
+    "synonyms": ["发电机过温", "绕组过热", "发电机轴承过温", "定子温度高"],
+    "faultCodes": ["F4103"],
+    "causes": [
+      "冷却风路/水路堵塞或冷却风机故障",
+      "轴承润滑不良",
+      "过载、三相不平衡或变流器侧异常发热"
+    ],
+    "steps": [
+      "区分是绕组测点还是轴承测点报警",
+      "检查冷却风机、滤网、冷却水流量与进回水温差",
+      "核对电流、功率与历史温升是否匹配负荷",
+      "轴承侧查脂量与异响，排除传感器漂移"
+    ],
+    "documentRefs": ["doc-generator-01"]
+  },
+  {
+    "id": "converter-grid-overcurrent",
+    "componentId": "converter",
+    "relatedComponentIds": ["transformer", "generator"],
+    "faultMode": "电网故障 / 过流",
+    "symptoms": ["变流器过流跳闸", "报电网故障", "并网失败或反复切出"],
+    "synonyms": ["变流器过流", "电网故障", "IGBT过流", "网侧故障"],
+    "faultCodes": ["F5204"],
+    "causes": [
+      "电网电压跌落、谐波或相序异常",
+      "网侧/机侧过流，功率模块或电流传感器异常",
+      "箱变或海缆侧短路、接地故障反射到变流器"
+    ],
+    "steps": [
+      "记录故障码、直流母线电压与网压波形时刻",
+      "先核对箱变高压侧与场用电是否同时异常",
+      "检查变流器进出线、接地及冷却是否正常",
+      "无外部电网问题再按模块过流隔离机侧/网侧"
+    ],
+    "documentRefs": ["doc-converter-01"]
+  },
+  {
+    "id": "yaw-overload-noise",
+    "componentId": "yaw",
+    "relatedComponentIds": ["hydraulic", "brake"],
+    "faultMode": "偏航过载或异响",
+    "symptoms": ["偏航过载报警", "偏航时异响", "对风缓慢或卡滞"],
+    "synonyms": ["偏航过载", "偏航异响", "对风卡死", "偏航电机过载"],
+    "faultCodes": ["F6105"],
+    "causes": [
+      "偏航齿圈润滑不良或夹杂异物",
+      "偏航刹车未完全释放导致带刹偏航",
+      "偏航电机/减速器损坏或风况下扭矩过大"
+    ],
+    "steps": [
+      "确认报警发生在偏航启动、运行还是刹车阶段",
+      "检查偏航刹车压力/间隙，确认已释放",
+      "查看齿圈润滑、轮边减速器油位与异常噪声部位",
+      "测量偏航电流，对比多台电机是否单台过载"
+    ],
+    "documentRefs": ["doc-yaw-01"]
+  },
+  {
+    "id": "hydraulic-low-pressure",
+    "componentId": "hydraulic",
+    "relatedComponentIds": ["pitch", "brake", "yaw"],
+    "faultMode": "液压压力低或泄漏",
+    "symptoms": ["系统压力低于设定", "油箱液位下降", "执行机构动作无力"],
+    "synonyms": ["液压压力低", "液压泄漏", "油压低", "液压站报压"],
+    "faultCodes": ["F7106"],
+    "causes": [
+      "管路、接头或油缸外泄漏",
+      "液压泵效率下降、溢流阀设定漂移",
+      "过滤器堵塞或油温异常导致压力建立慢"
+    ],
+    "steps": [
+      "对比当前压力、蓄能器预充与油箱液位趋势",
+      "沿泵、阀块、油缸目视渗油并擦净后复检",
+      "检查滤芯压差与油温",
+      "泄漏点未找到时，按回路隔离变桨/刹车/偏航支路"
+    ],
+    "documentRefs": ["doc-hydraulic-01"]
+  },
+  {
+    "id": "brake-not-release",
+    "componentId": "brake",
+    "relatedComponentIds": ["hydraulic"],
+    "faultMode": "刹车无法释放或摩擦片磨损",
+    "symptoms": ["启动时刹车未打开", "刹车盘过热", "摩擦片磨损报警"],
+    "synonyms": ["刹车抱死", "刹车未释放", "刹车片磨损", "制动器过热"],
+    "faultCodes": ["F8107"],
+    "causes": [
+      "液压/电磁刹车供压或供电未到位",
+      "刹车间隙调整不当或摩擦片到限",
+      "刹车传感器误报开到位"
+    ],
+    "steps": [
+      "核对刹车打开指令、压力/电流与开到位反馈",
+      "目视摩擦片厚度、盘面温度与焦糊痕迹",
+      "检查液压支路或电磁铁行程",
+      "确认传感器支架无松动后再做开合试验"
+    ],
+    "documentRefs": ["doc-brake-01"]
+  },
+  {
+    "id": "cooling-fan-fault",
+    "componentId": "cooling",
+    "relatedComponentIds": ["gearbox", "generator", "converter"],
+    "faultMode": "冷却风扇故障或冷却器堵塞",
+    "symptoms": ["风扇未转或频繁启停", "冷却器进出口温差小", "多部件同时过温"],
+    "synonyms": ["冷却风扇故障", "油冷器堵塞", "水冷流量低", "散热器脏"],
+    "faultCodes": ["F9108"],
+    "causes": [
+      "风扇电机、接触器或温控回路故障",
+      "冷却器翅片积尘、油污",
+      "冷却介质不足、泵或阀门未开"
+    ],
+    "steps": [
+      "确认是齿轮箱、发电机还是变流器冷却回路报警",
+      "现场看风扇转向、电流与热继电是否跳开",
+      "检查冷却器清洁度与进出口温度",
+      "水路系统核对流量、过滤器与排气"
+    ],
+    "documentRefs": ["doc-cooling-01"]
+  },
+  {
+    "id": "tower-bolt-loose",
+    "componentId": "tower",
+    "relatedComponentIds": ["blade"],
+    "faultMode": "基础螺栓松动或塔筒异常振动",
+    "symptoms": ["塔基振动异常", "锚栓预紧力下降", "平台有异常响动"],
+    "synonyms": ["塔筒振动", "基础螺栓松动", "锚栓松", "塔基晃动"],
+    "faultCodes": ["F1019"],
+    "causes": [
+      "塔基锚栓或法兰螺栓预紧衰减",
+      "基础不均匀沉降或灌浆缺陷",
+      "叶轮不平衡把振动传到塔筒"
+    ],
+    "steps": [
+      "对比振动是否与转速、风向相关",
+      "检查塔筒法兰与基础锚栓标记、防松帽",
+      "观察灌浆层裂缝、积水",
+      "排除叶片不平衡后再安排复拧力矩"
+    ],
+    "documentRefs": ["doc-tower-01"]
+  },
+  {
+    "id": "control-signal-loss",
+    "componentId": "control",
+    "relatedComponentIds": ["pitch", "converter"],
+    "faultMode": "信号丢失或漂移",
+    "symptoms": ["模拟量突变或缓慢漂移", "通信中断", "传感器质量位无效"],
+    "synonyms": ["信号丢失", "传感器漂移", "通信中断", "编码器丢失"],
+    "faultCodes": ["F1110"],
+    "causes": [
+      "传感器供电、屏蔽或接地不良",
+      "现场总线接头松动、光缆衰减",
+      "测点本身失效而非被测物理量变化"
+    ],
+    "steps": [
+      "看质量位、通信丢包与故障前后波形是否跳变",
+      "测量传感器供电与屏蔽接地",
+      "用便携表对比现场值，判断漂移还是真实变化",
+      "更换测点或重做接头后观察是否复现"
+    ],
+    "documentRefs": ["doc-control-01"]
+  },
+  {
+    "id": "transformer-overtemp",
+    "componentId": "transformer",
+    "relatedComponentIds": ["converter"],
+    "faultMode": "箱变过温或并网失败",
+    "symptoms": ["箱变绕组/油温高", "并网合闸失败", "低压侧电压异常"],
+    "synonyms": ["箱变过温", "并网失败", "变压器过热", "开关柜跳闸"],
+    "faultCodes": ["F1211"],
+    "causes": [
+      "箱变冷却风扇停转或滤网堵塞",
+      "负荷长期偏高或三相不平衡",
+      "并网条件不满足：电压、相序、同期或保护动作"
+    ],
+    "steps": [
+      "读取箱变温度、风机状态与保护动作报告",
+      "检查箱变室通风、风扇与滤网",
+      "并网失败时核对网压、相序、同期与变流器就绪",
+      "无外部电网问题再查低压开关柜与电缆接头温升"
+    ],
+    "documentRefs": ["doc-transformer-01"]
+  },
+  {
+    "id": "other-unclassified-stop",
+    "componentId": "other",
+    "relatedComponentIds": ["control"],
+    "faultMode": "未分类异常停机",
+    "symptoms": ["无明确部件故障码的停机", "仅有总故障或人工停机记录"],
+    "synonyms": ["异常停机", "未知故障", "总故障", "无故障码停机"],
+    "faultCodes": ["F0000"],
+    "causes": [
+      "故障码未写入本库或机型码表不一致",
+      "人工停机、远程停机或安全链动作未归类",
+      "多系统同时报警，主因尚未隔离"
+    ],
+    "steps": [
+      "导出停机时段全部故障码与操作记录",
+      "按时间线对照风速、功率、变桨、偏航、变流器",
+      "有明确部件码则改用该部件检索",
+      "仍无法归类则记录现象，待手册库导入后再匹配"
+    ],
+    "documentRefs": ["doc-other-01"]
+  }
+]
